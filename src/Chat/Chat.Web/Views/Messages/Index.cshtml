@@ -1,0 +1,72 @@
+﻿@model Chat.Web.Models.MessageInputModel;
+@{
+
+}
+
+<style>
+    #chat{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #msg {
+        height: 300px;
+        width: 300px;
+        max-height: 300px;
+        max-width: 300px;
+        border: solid 1px black;
+        overflow: visible;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+    }
+
+    #messageInputModel{
+        width: 300px;
+    }    
+
+    #content {
+        height: 30px;
+        width: calc(80% - 5px);
+    }
+
+    #submit-content{
+        height: 30px;
+        width: 20%;
+        color: white;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        border: none;
+    }
+</style>
+
+<div id="chat">
+
+    <div id="msg">
+    </div>
+
+    <form id="messageInputModel">
+        <input id="content" name="Content" />
+        <button id="submit-content" type="button">Enviar</button>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    setInterval(function () {
+        $.post("@Url.Action("Receive")", "{}")
+            .done(function (response) {
+                if (response == null) return;
+                var data = $("#msg").html();
+                $("#msg").html(data + response + "<br>");
+            });
+    }, 1000);
+
+    $("#submit-content").click(function () {
+        var message = $("#messageInputModel").serialize();
+
+        $.post("@Url.Action("Send")", message);
+    });
+</script>

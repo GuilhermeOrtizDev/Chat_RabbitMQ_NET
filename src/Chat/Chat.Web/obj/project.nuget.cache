@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "DO+hEtCxxDKIpFUvA0NhjechJNfcONnQgxXt84d0YLMy48j8/ga9paAB7Fh/Ge/WPFVzQbfuxFJSQKA1iI7qRg==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\Chat_RabbitMQ_NET\\src\\Chat\\Chat.Web\\Chat.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Guilherme Ortiz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Guilherme Ortiz\\.nuget\\packages\\rabbitmq.client\\6.5.0\\rabbitmq.client.6.5.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Ortiz\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Guilherme Ortiz\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
